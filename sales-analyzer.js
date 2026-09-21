@@ -146,6 +146,9 @@ const salesByCategory = sales.reduce((acc, sale) => {
     return acc
 }, {})
 
+// Return the category with the highest revenue
+const maxRevenue = Math.max(...Object.values(salesByCategory));
+
 console.log('Total revenue:', totalRevenue)
 console.log('Transactions:', totalTransactions)
 console.log('Average transaction:', averageTransaction)
@@ -155,3 +158,31 @@ console.log('Salesperson revenue:', salespersonRevenue)
 console.log('Top salesperson:', topSalespersonName)
 console.log('Sales by day of the week:', salesByDay)
 console.log('Sales by category:', salesByCategory)
+
+document.getElementById('total-revenue').textContent =
+    `$${totalRevenue}`;
+document.getElementById('total-transactions').textContent =
+    totalTransactions;
+document.getElementById('average-transaction').textContent =
+    `$${averageTransaction.toFixed(2)}`;
+document.getElementById('top-product').textContent =
+    `${topProducts[0].product}`;
+document.getElementById('category-sales').innerHTML =
+    Object.entries(salesByCategory)
+        .map(([category, sales]) => {
+            const percentage = (sales / maxRevenue) * 100
+        return `
+            <tr>
+                <td class="category">${category}</td>
+                <td class="bar-cell">
+                    <div class="bar-container">
+                        <div class="bar" style="width: ${percentage}%"></div>
+                    </div>
+                </td>
+                <td class="sales">$${sales}</td>
+            </tr>
+        `})
+        .join('');
+
+document.getElementById('top-salesperson').textContent =
+    `${topSalespersonName}: $${salespersonRevenue[topSalespersonName]}`;

@@ -14,42 +14,72 @@
     </head>
     <body>
         <header>
-            <h1>Sales Data Analysis</h1>
-            <p>Performance Dashboard</p>
             <nav></nav>
         </header>
 
         <main>
             <section>
-                <h2>Overview</h2>
-                <div>
-                    <h3>Total revenue</h3>
-                    <p>$500</p>
-                    <p>+8.2%</p>
-                </div>
-                <div>
-                    <h3>Transactions</h3>
-                    <p>10</p>
-                    <p>Sales recorded</p>
-                </div>
-                <div>
-                    <h3>Average sale</h3>
-                    <p>$50</p>
-                    <p>Per transaction</p>
-                </div>
-                <div>
-                    <h3>Top product</h3>
-                    <p>Jacket</p>
-                    <p>Highest revenue</p>
-                </div>
-            </section>
-            <section>
-                <h3>Sales by category</h3>
+                <table class="dashboard">
+                    <thead class="header">
+                        <tr>
+                            <th>Sales Data Analysis</th>
+                        </tr>
+                        <tr>
+                            <td>Performance Dashboard</td>
+                        </tr>
+                        <tr>
+                            <th>Overview</th>
+                            <td class="date">September 2026</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h2>Total revenue</h2>
+                                <p id="total-revenue"></p>
+                                <p>+8.2%</p>
+                            </td>
+                            <td>
+                                <h2>Transactions</h2>
+                                <p id="total-transactions"></p>
+                                <p>Sales recorded</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>Average sale</h2>
+                                <p id="average-transaction"></p>
+                                <p>Per transaction</p>
+                            </td>
+                            <td>
+                                <h2>Top product</h2>
+                                <p id="top-product"></p>
+                                <p>Highest revenue</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead class="header">
+                        <tr>
+                            <th colspan="3">Sales by category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="category-sales">
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Illustrative design with sample data—not actual sales figures.</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </section>
         </main>
     
         <footer>
 
         </footer>
+
+        <script type="text/javascript" src="sales-analyzer.js"></script>
     </body>
 </html>

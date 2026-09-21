@@ -1,0 +1,52 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+table {
+    width: 40%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table.dashboard {
+    table-layout: fixed;
+}
+
+thead.header {
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+td.date {
+    text-align: right;
+}
+
+td.category {
+    width: 15%;
+}
+
+td.bar-cell {
+    width: 75%;
+    padding: 0 10px;
+}
+
+td.sales {
+    width: 10%;
+    text-align: right;
+}
+
+.bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #eee;
+    border-radius: 6px;
+}
+
+.bar {
+    height: 100%;
+    background-color: #333;
+    border-radius: 6px;
+}
