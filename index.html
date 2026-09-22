@@ -27,6 +27,10 @@
                         <tr>
                             <td class="subtitle" colspan="2">Performance Dashboard</td>
                         </tr>
+                    </thead>
+                </table>
+                <table class="overview">
+                    <thead>
                         <tr>
                             <th>Overview</th>
                             <td class="date">September 2026</td>
@@ -36,30 +40,30 @@
                         <tr>
                             <td>
                                 <h2>Total revenue</h2>
-                                <p id="total-revenue"></p>
+                                <p class="value" id="total-revenue"></p>
                                 <p>+8.2%</p>
                             </td>
                             <td>
                                 <h2>Transactions</h2>
-                                <p id="total-transactions"></p>
+                                <p class="value" id="total-transactions"></p>
                                 <p>Sales recorded</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <h2>Average sale</h2>
-                                <p id="average-transaction"></p>
+                                <p class="value" id="average-transaction"></p>
                                 <p>Per transaction</p>
                             </td>
                             <td>
                                 <h2>Top product</h2>
-                                <p id="top-product"></p>
+                                <p class="value" id="top-product"></p>
                                 <p>Highest revenue</p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <table>
+                <table class="category-sales">
                     <thead>
                         <tr>
                             <th colspan="3">Sales by category</th>
@@ -80,6 +84,6 @@
 
         </footer>
 
-        <script type="text/javascript" src="sales-analyzer.js"></script>
+        <script src="sales-analyzer.js"></script>
     </body>
 </html>
