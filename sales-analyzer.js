@@ -147,7 +147,8 @@ const salesByCategory = sales.reduce((acc, sale) => {
 }, {})
 
 // Return the category with the highest revenue
-const maxRevenue = Math.max(...Object.values(salesByCategory));
+const maxRevenue = Math.max(...Object.values(salesByCategory))
+const maxProductRevenue = Math.max(...Object.values(productRevenue))
 
 console.log('Total revenue:', totalRevenue)
 console.log('Transactions:', totalTransactions)
@@ -182,6 +183,22 @@ document.getElementById('category-sales').innerHTML =
                 <td class="sales">$${sales}</td>
             </tr>
         `})
+        .join('');
+document.getElementById('product-revenue').innerHTML =
+    Object.entries(productRevenue)
+        .map(([product, revenue]) => {
+            const percentage = (revenue / maxProductRevenue) * 100
+            return `
+                <tr>
+                    <td class="product">${product}</td>
+                    <td class="bar-cell">
+                        <div class="bar-container">
+                            <div class="bar" style="width: ${percentage}%"></div>
+                        </div>
+                    </td>
+                    <td class="revenue">$${revenue}</td>
+                </tr>
+            `})
         .join('');
 
 document.getElementById('top-salesperson').textContent =

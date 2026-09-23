@@ -20,7 +20,7 @@ table {
     table-layout: fixed;
     border-radius: 20px 20px 0 0;
     overflow: hidden;
-    margin: 20px auto 0;
+    margin: 30px auto 0;
 }
 
 .overview {
@@ -29,9 +29,10 @@ table {
     margin: 0 auto 0;
 }
 
-.category-sales {
+.sales-table {
     border-radius: 0 0 20px 20px;
     overflow: hidden;
+    margin: 0 auto 30px;
 }
 
 /* headers */
@@ -51,8 +52,8 @@ table {
     font-size: 1.1rem;
 }
 
-.category-sales th {
-    padding: 5px 15px;
+.sales-table th {
+    padding: 20px 15px 10px;
 }
 
 /* table cells */
@@ -83,7 +84,7 @@ table {
     width: 15%;
 }
 
-.category-sales td {
+.sales-table td {
     padding: 3px 15px;
 }
 
@@ -92,7 +93,8 @@ table {
     padding: 0 10px;
 }
 
-.sales {
+.sales,
+.revenue {
     width: 10%;
     text-align: right;
 }
@@ -112,7 +114,7 @@ table {
 
 /* footer */
 
-.category-sales tfoot td {
-    font-size: 0.9rem;
+.sales-table tfoot td {
+    font-size: 0.8rem;
     padding: 15px;
 }
