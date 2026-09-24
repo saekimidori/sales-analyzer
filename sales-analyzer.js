@@ -125,17 +125,27 @@ const salespersonRevenue = sales.reduce((top, sale) => {
 }, {})
 
 // Return the top salesperson
-const topSalespersonName = Object.keys(salespersonRevenue).reduce((a, b) => salespersonRevenue[a] > salespersonRevenue[b] ? a : b)
+const topSalespersonName = Object.keys(salespersonRevenue)
+    .reduce((a, b) => salespersonRevenue[a] > salespersonRevenue[b] ? a : b)
 
-// Return sales by day of the week
-const salesByDay = sales.reduce((acc, sale) => {
-    const day = new Date(sale.salesDate).toLocaleDateString('en-US', { weekday: 'long' })
-    if (!acc[day]) {
-        acc[day] = 0
-    }
-    acc[day] += sale.price * sale.quantity
-    return acc
-}, {})
+// Return sales by day of the week and sort it by day number (0 = Sunday, 1 = Monday, etc.)
+const salesByDay = Object.fromEntries(
+    Object.entries(
+        sales.reduce((acc, sale) => {
+            const date = new Date(sale.salesDate)
+            const day = date.toLocaleDateString('en-US', { weekday: 'long' })
+            const dayNumber = date.getDay()
+            if (!acc[day]) {
+                acc[day] = {
+                    dayNumber: dayNumber,
+                    revenue: 0
+                }
+            }
+            acc[day].revenue += sale.price * sale.quantity
+            return acc
+        }, {})
+    ).sort(([, a], [, b]) => a.dayNumber - b.dayNumber)
+)
 
 // Return sales by category
 const salesByCategory = sales.reduce((acc, sale) => {
@@ -148,7 +158,10 @@ const salesByCategory = sales.reduce((acc, sale) => {
 
 // Return the category with the highest revenue
 const maxRevenue = Math.max(...Object.values(salesByCategory))
+// Return the product with the highest revenue
 const maxProductRevenue = Math.max(...Object.values(productRevenue))
+// Return the day with the highest sales
+const maxSales = Math.max(...Object.values(salesByDay).map(day => day.revenue))
 
 console.log('Total revenue:', totalRevenue)
 console.log('Transactions:', totalTransactions)
@@ -233,6 +246,21 @@ document.getElementById('seller-revenue').innerHTML =
         .join('');  
 document.getElementById('top-seller').innerHTML =
     `<span class="label">Top Seller:</span> ${topSalespersonName}`;
+document.getElementById('daily-sales').innerHTML =
+    Object.entries(salesByDay)
+        .map(([day, data]) => {
+            const percentage = (data.revenue / maxSales) * 100
 
-document.getElementById('top-salesperson').textContent =
-    `${topSalespersonName}: $${salespersonRevenue[topSalespersonName]}`;
+            return `
+                <tr>
+                    <td class="day">${day}</td>
+                    <td class="bar-cell">
+                        <div class="bar-container">
+                            <div class="bar" style="width: ${percentage}%"></div>
+                        </div>
+                    </td>
+                    <td class="sales">$${data.revenue}</td>
+                </tr>
+            `
+        })
+        .join('')
