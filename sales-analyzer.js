@@ -215,6 +215,24 @@ document.getElementById('top-products').innerHTML =
             </tr>
         `})
     .join('');
+document.getElementById('seller-revenue').innerHTML =
+    Object.entries(salespersonRevenue)
+        .map(([salesperson, revenue]) => {
+            const percentage = (revenue / salespersonRevenue[topSalespersonName]) * 100
+            return `
+                <tr>
+                    <td class="salesperson">${salesperson}</td>
+                    <td class="bar-cell">
+                        <div class="bar-container">
+                            <div class="bar" style="width: ${percentage}%"></div>
+                        </div>
+                    </td>
+                    <td class="revenue">$${revenue}</td>
+                </tr>
+            `})
+        .join('');  
+document.getElementById('top-seller').innerHTML =
+    `<span class="label">Top Seller:</span> ${topSalespersonName}`;
 
 document.getElementById('top-salesperson').textContent =
     `${topSalespersonName}: $${salespersonRevenue[topSalespersonName]}`;
