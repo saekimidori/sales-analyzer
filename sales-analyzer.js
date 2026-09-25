@@ -5,7 +5,7 @@ const sales = [
         price: 25, 
         quantity: 2, 
         salesperson: 'Alice',
-        salesDate: '2024-06-01'
+        salesDate: '2026-09-01'
     },
     {
         product: 'Sneakers', 
@@ -13,7 +13,7 @@ const sales = [
         price: 80, 
         quantity: 1, 
         salesperson: 'Bob',
-        salesDate: '2024-06-02'
+        salesDate: '2026-09-02'
     },
     {
         product: 'Jeans', 
@@ -21,7 +21,7 @@ const sales = [
         price: 50, 
         quantity: 1, 
         salesperson: 'Charlie',
-        salesDate: '2024-06-03'
+        salesDate: '2026-09-03'
     },
     {
         product: 'T-shirt',
@@ -29,7 +29,7 @@ const sales = [
         price: 25, 
         quantity: 3, 
         salesperson: 'Charlie',
-        salesDate: '2024-06-03'
+        salesDate: '2026-09-03'
     },
     {
         product: 'Hat', 
@@ -37,7 +37,7 @@ const sales = [
         price: 30, 
         quantity: 5, 
         salesperson: 'Alice',
-        salesDate: '2024-06-04'
+        salesDate: '2026-09-04'
     },
     {
         product: 'Jacket', 
@@ -45,7 +45,7 @@ const sales = [
         price: 120, 
         quantity: 3, 
         salesperson: 'Bob',
-        salesDate: '2024-06-05'
+        salesDate: '2026-09-05'
     },
     {
         product: 'Socks', 
@@ -53,7 +53,7 @@ const sales = [
         price: 10, 
         quantity: 10, 
         salesperson: 'Charlie',
-        salesDate: '2024-06-06'
+        salesDate: '2026-09-06'
     },
     {
         product: 'Belt',
@@ -61,7 +61,7 @@ const sales = [
         price: 15, 
         quantity: 2, 
         salesperson: 'Alice',
-        salesDate: '2024-06-07'
+        salesDate: '2026-09-07'
     },
     {
         product: 'Sweater', 
@@ -69,7 +69,7 @@ const sales = [
         price: 60, 
         quantity: 1, 
         salesperson: 'Bob',
-        salesDate: '2024-06-08'
+        salesDate: '2026-09-08'
     },
     {
         product: 'Scarf', 
@@ -77,7 +77,7 @@ const sales = [
         price: 20, 
         quantity: 4, 
         salesperson: 'Charlie',
-        salesDate: '2024-06-09'
+        salesDate: '2026-09-09'
     },
     {
         product: 'Gloves', 
@@ -85,7 +85,7 @@ const sales = [
         price: 25, 
         quantity: 3, 
         salesperson: 'Alice',
-        salesDate: '2024-06-10'
+        salesDate: '2026-09-10'
     }
 ]
 
