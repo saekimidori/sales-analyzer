@@ -2,6 +2,8 @@
 
 A simple retail sales analysis dashboard built with HTML, CSS, and JavaScript.
 
+[View the live dashboard](https://saekimidori.github.io/sales-analyzer/)
+
 ## Overview
 
 This project analyzes sample retail sales data and displays key metrics in a dashboard.
@@ -23,10 +25,6 @@ This project analyzes sample retail sales data and displays key metrics in a das
 - HTML
 - CSS
 - JavaScript
-
-## Live Demo
-
-[View the live dashboard](https://saekimidori.github.io/sales-analyzer/)
 
 ## Future Updates
 
